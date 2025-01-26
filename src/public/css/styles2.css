@@ -1,17 +1,27 @@
 body {
-    font-family: "Arial", sans-serif;
+    font-family: "Roboto", serif;
     padding-top: 56px;
 }
 
 .navbar {
     background: linear-gradient(90deg, rgb(78, 195, 206) 0%, rgb(206, 239, 241) 65%, rgba(230, 217, 161, 0.53) 83%);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-weight: 500;
 }
 
 .navbar-brand,
 .nav-link {
-    color: #333 !important;
+    color: #4e5185;
     font-weight: bold;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.nav-link:hover {
+    
+    background-color: rgb(27, 80, 94);
+    color: aliceblue;
+    transition: 0.5s ease;
 }
 
 .hero {
@@ -30,9 +40,20 @@ body {
     margin-bottom: 2rem;
     color: #555;
 }
+.logo-text {
+    color: #856f1b;
+    font-weight: bold;
+    text-decoration: none;
+}
 
 section {
     padding: 80px 0;
+}
+
+.img-logo {
+    height: 40px;
+    width: auto;
+    border-radius: 50%;
 }
 
 #nosotros {
@@ -45,6 +66,12 @@ section {
         height: 50dvh;
         width: auto;
     }
+}
+
+#quienes-somos {
+    background: linear-gradient(135deg, rgb(206, 239, 241) 0%, rgba(230, 217, 161, 0.53) 100%);
+    padding: 100px 0;
+
 }
 
 #servicios {
@@ -62,10 +89,13 @@ section {
     }
 }
 
+
+
 h2 {
-    color: rgb(78, 195, 206);
-    margin-bottom: 2rem;
+    color: rgb(27, 80, 94);
 }
+
+
 
 .card {
     transition: transform 0.3s ease-in-out;
