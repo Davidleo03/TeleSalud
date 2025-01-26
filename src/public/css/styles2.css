@@ -1,0 +1,112 @@
+body {
+    font-family: "Arial", sans-serif;
+    padding-top: 56px;
+}
+
+.navbar {
+    background: linear-gradient(90deg, rgb(78, 195, 206) 0%, rgb(206, 239, 241) 65%, rgba(230, 217, 161, 0.53) 83%);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand,
+.nav-link {
+    color: #333 !important;
+    font-weight: bold;
+}
+
+.hero {
+    background: linear-gradient(135deg, rgb(206, 239, 241) 0%, rgba(230, 217, 161, 0.53) 100%);
+    padding: 100px 0;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    color: #555;
+}
+
+section {
+    padding: 80px 0;
+}
+
+#nosotros {
+    background-color: rgb(27, 80, 94);
+    color: aliceblue;
+    h2 {
+        color: aliceblue;
+    }
+    img {
+        height: 50dvh;
+        width: auto;
+    }
+}
+
+#servicios {
+    h2 {
+        color : rgb(27, 80, 94);
+    }
+}
+
+#contacto {
+    h2 {
+        color: rgb(27, 80, 94);
+    }
+    button {
+        background-color: rgb(27, 80, 94);
+    }
+}
+
+h2 {
+    color: rgb(78, 195, 206);
+    margin-bottom: 2rem;
+}
+
+.card {
+    transition: transform 0.3s ease-in-out;
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn-primary {
+    background-color: rgb(78, 195, 206);
+    border-color: rgb(78, 195, 206);
+}
+
+.btn-primary:hover {
+    background-color: rgb(66, 166, 175);
+    border-color: rgb(66, 166, 175);
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 60px 0;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
