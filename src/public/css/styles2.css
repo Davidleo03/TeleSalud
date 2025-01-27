@@ -71,6 +71,10 @@ section {
 #quienes-somos {
     background: linear-gradient(135deg, rgb(206, 239, 241) 0%, rgba(230, 217, 161, 0.53) 100%);
     padding: 100px 0;
+    h1 {
+        color: rgb(27, 80, 94);
+        font-weight: 500;
+    }
 
 }
 

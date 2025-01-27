@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administrador</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, rgb(206, 239, 241) 0%, rgba(230, 217, 161, 0.53) 100%);
+            min-height: 100vh;
+        }
+        .sidebar {
+            background-color: rgba(255, 255, 255, 0.8);
+            height: 100vh;
+            position: fixed;
+            padding-top: 20px;
+            width: 200px;
+            transition: all 0.3s;
+        }
+        .main-content {
+            margin-left: 200px;
+            padding: 20px;
+            transition: all 0.3s;
+        }
+        .card {
+            background-color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 20px;
+        }
+        .nav-link {
+            color: #333;
+        }
+        .nav-link:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+        .nav-link.active {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 1199px) {
+            .sidebar {
+                width: 160px;
+            }
+            .main-content {
+                margin-left: 160px;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: static;
+            }
+            .main-content {
+                margin-left: 0;
+            }
+            .nav {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .nav {
+                flex-wrap: wrap;
+            }
+            .nav-item {
+                width: 50%;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .nav-item {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav class="col-lg-2 col-md-3 sidebar">
+                <div class="position-sticky">
+                    <ul class="nav flex-column">
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="bi bi-envelope"></i> Mensajes
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link-active" href="/logout">
+                                <i class="bi bi-box-arrow-left"></i> Salir
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Main content -->
+            <main class="col-lg-10 col-md-9 main-content">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Mensajes Recibidos</h1>
+                </div>
+
+                <!-- Messages -->
+                <div class="row">
+                    <% if (messages) { %>
+                        <% messages.forEach(msg => {  %>
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title"> <%= msg.name %> </h5>
+                                        <h6 class="card-subtitle mb-2 text-muted"> <%= msg.email %>  </h6>
+                                        <p class="card-text"> <%= msg.content %> </p>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        <% }) %>
+
+                    <% } %>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,4 +1,5 @@
 import express from 'express';
+import session from 'express-session';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import router from './route.js'
@@ -16,6 +17,14 @@ app.set('views',  __dirname + '/views');
 
 app.use('/recursos', express.static(join(__dirname, 'public')));
 
+app.use(session({
+    secret : "misecreto",
+    resave: false,
+    saveUninitialized : false,
+    cookie: {
+        maxAge :1000 * 60 * 60 * 40
+    }
+}))
 app.use(express.json());
 app.use(express.urlencoded({extended: false}))
 
