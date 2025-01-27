@@ -15,7 +15,16 @@ router.get('/', (req, res) => {
 
 router.post("/msg", (req, res) => {
     const { name, email, msg } = req.body;
-    res.redirect('/')
+    db.all("INSERT INTO Messages (name, email, content) VALUES (?, ?, ?)", [name, email, msg], (err) => {
+        if(err) return res.send("Error al obtener los mensajes");
+        setTimeout(() => {
+            res.redirect("/")
+        }, 1000);
+        
+
+        
+
+    })
 })
 
 router.get('/login', (req, res) => {
