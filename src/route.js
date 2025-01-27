@@ -19,12 +19,7 @@ router.post("/msg", (req, res) => {
 })
 
 router.get('/login', (req, res) => {
-    db.all("SELECT * FROM Messages", (err, rows) => {
-        console.log(rows)
-        if(err) return res.send("Error al obtener los mensajes");
-        res.render('login', {messages: rows});
-
-    })
+    res.render("login")
     
 })
 
@@ -44,7 +39,12 @@ router.post('/login', (req, res) => {
 })
 
 router.get("/admin", Auntnticate, (req, res) => {
-    res.render('admin')
+    db.all("SELECT * FROM Messages", (err, rows) => {
+        console.log(rows)
+        if(err) return res.send("Error al obtener los mensajes");
+        res.render('admin', {messages: rows});
+
+    })
 })
 
 router.get("/logout", (req, res) => {

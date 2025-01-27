@@ -30,7 +30,7 @@ app.use(express.urlencoded({extended: false}))
 
 app.use('/', router);
 
-const port = 3000 || process.env.PORT;
+const port = 4000 || process.env.PORT;
 
 
 app.listen(port, () => console.log(`Server Running on port ${port}`))
